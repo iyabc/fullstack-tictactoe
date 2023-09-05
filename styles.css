@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.welcome {
+  width: 100vw;
+  height: 100vh;
+  background: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  color: #023047;
+  font-weight: bolder;
+  font-size: xx-large;
+  transition: all ease-in-out 0.5s;
+}
+
+.welcome-hidden {
+  transform: translateY(100vh);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #023047;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  color: #219ebc;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.header h2 {
+  font-size: xx-large;
+}
+
+.status_bar_highlight {
+  color: #fb8500;
+  text-transform: uppercase;
+}
+
+.cell {
+  width: 33.3%;
+  height: auto;
+  border: 3px solid #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1.5px;
+  overflow: hidden;
+  font-weight: bolder;
+  font-size: 60px;
+  text-transform: uppercase;
+  line-height: 0;
+  margin-block: 0;
+}
+
+.cell:hover {
+  cursor: pointer;
+}
+
+.cell-win {
+  background-color: #a51515;
+}
+
+.restart_btn {
+  border: none;
+  border-radius: 20px;
+  background-color: #219ebc;
+  padding: 10px 20px;
+  color: #023047;
+  font-weight: bold;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.restart_btn:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+}
+
+.x {
+  color: #ffb703;
+}
+
+.o {
+  color: #fb8500;
+}
