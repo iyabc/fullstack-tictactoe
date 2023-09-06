@@ -1,5 +1,5 @@
 let selectedCells = Array(9);
-let currentPlayer = "o";
+let currentPlayer = "O";
 let hasWinner = false;
 let isDraw = false;
 const winningCombinations = [
@@ -16,11 +16,15 @@ const winningCombinations = [
 const welcomeScreen = document.querySelector(".welcome");
 const cells = document.getElementsByClassName("cell");
 const statusBarHighlight = document.querySelector(".status_bar_highlight");
+const restartBtn = document.querySelector(".restart_btn");
 
 const hideWelcomeScreen = () => {
   setTimeout(() => {
-    welcomeScreen.classList.add("welcome-hidden");
+    welcomeScreen.classList.add("welcome-slide");
   }, 1500);
+  setTimeout(() => {
+    welcomeScreen.classList.add("hidden");
+  }, 3000);
 };
 
 const onCellClick = (clickedCell) => {
@@ -64,21 +68,28 @@ const checkDraw = (selectedCells) => {
 };
 
 const restartGame = () => {
+  restartBtn.classList.add("rotate");
+
   selectedCells = Array(9);
   for (let i = 0; i < cells.length; i++) {
-    cells[i].classList.remove("x", "o", "cell-win");
+    cells[i].classList.remove("X", "O", "cell-win");
     cells[i].innerHTML = "";
   }
-  currentPlayer = "o";
+  currentPlayer = "O";
   hasWinner = false;
   isDraw = false;
+
+  setTimeout(() => {
+    restartBtn.classList.remove("rotate");
+  }, 500);
+
   togglePlayer();
 };
 
 const togglePlayer = () => {
-  currentPlayer = currentPlayer === "x" ? "o" : "x";
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
   statusBarHighlight.innerHTML = currentPlayer;
-  statusBarHighlight.classList.remove("x", "o", "win");
+  statusBarHighlight.classList.remove("X", "O", "win");
   statusBarHighlight.classList.add(currentPlayer);
 };
 
