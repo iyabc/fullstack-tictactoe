@@ -50,7 +50,7 @@ const checkWinner = (selectedCells) => {
       cells[c].classList.add("cell-win");
       setTimeout(() => {
         alert(`${selectedCells[a]} wins!`);
-      }, 0);
+      }, 500);
       hasWinner = true;
       return;
     }
@@ -62,7 +62,7 @@ const checkDraw = (selectedCells) => {
   if (selectedCells.join("").length === selectedCells.length) {
     setTimeout(() => {
       alert("Draw! Try again.");
-    }, 0);
+    }, 500);
     isDraw = true;
   }
 };
@@ -81,7 +81,7 @@ const restartGame = () => {
 
   setTimeout(() => {
     restartBtn.classList.remove("rotate");
-  }, 500);
+  }, 800);
 
   togglePlayer();
 };
